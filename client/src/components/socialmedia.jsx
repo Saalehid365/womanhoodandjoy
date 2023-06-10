@@ -4,7 +4,7 @@ import Login from "./login";
 
 const Socialmedia = () => {
   return (
-    <div className="flex justify-evenly w-full text-1xl">
+    <div className="flex justify-evenly w-44 text-1xl">
       <FaFacebook />
       <FaInstagram />
       <FaTwitter />

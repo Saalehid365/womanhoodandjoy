@@ -1,26 +1,39 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const BlogPost = () => {
+import { formatISO9075 } from "date-fns";
+import { FaArrowRight, FaUser } from "react-icons/fa";
+
+const BlogPost = ({
+  _id,
+  title,
+  summary,
+  cover,
+  content,
+  createdAt,
+  author,
+}) => {
   return (
-    <div className="flex  items-center  h-60 pb-6 border-b-2 pt-4">
-      <img
-        src="https://cdn.shopify.com/s/files/1/0398/3153/5778/articles/557750845602_600x600_crop_center.png?v=1661958608"
-        className="h-full w-60 rounded-lg"
-      ></img>
-      <div className="flex flex-col items-start justify-evenly h-full px-4 w-2/3">
-        <h3>Blog title</h3>
-
-        <h3 className="text-start">
-          Lorem ipsum dolor sit amet conseetur, adipisicing elit. At
-          voluptatibus ducimus nisi officia unde earum sed natus rem explicabo
-          nam?
-        </h3>
-        <div className="flex w-60 justify-between items-start">
-          <h4>Author</h4>
-          <h4>5-6-2023</h4>
-          <h4>Duration</h4>
-        </div>
+    <div className="flex flex-col items-start w-2/3 pb-6 border border-b-2 pt-4 bg-gray-200 mb-4">
+      <Link to={`/post/${_id}`}>
+        <img
+          src={"http://localhost:4000/" + cover}
+          className="h-96 w-full rounded-xl"
+          alt="/"
+        ></img>
+      </Link>
+      <div>
+        <FaUser />
+        <h2>{author.username}</h2>
       </div>
+
+      <Link
+        to={`/post/${_id}`}
+        className="w-44 h-12 border flex justify-center items-center border-gray-800 rounded-full"
+      >
+        <h3>Read more</h3>
+        <FaArrowRight />
+      </Link>
     </div>
   );
 };

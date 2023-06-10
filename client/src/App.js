@@ -6,20 +6,32 @@ import Footer from "./components/footer";
 import Loginpage from "./pages/login/loginpage";
 import Blogpage from "./pages/blogs/blogpage";
 import Registerpage from "./pages/login/registerpage";
+import { UserContextProvider } from "./user";
+import Createnew from "./pages/create/createnew";
+import Postpage from "./pages/blogs/postpage";
+import Editpost from "./pages/blogs/editpost";
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route index element={<Home />} />
-          <Route path="loginpage" element={<Loginpage />} />
-          <Route path="registerpage" element={<Registerpage />} />
-          <Route path="blogpage" element={<Blogpage />} />
-        </Routes>
-        <Footer />
-      </Router>
+      <UserContextProvider>
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route>
+              <Route index element={<Home />} />
+              <Route path="loginpage" element={<Loginpage />} />
+              <Route path="registerpage" element={<Registerpage />} />
+              <Route path="blogpage" element={<Blogpage />} />
+              <Route path="createnew" element={<Createnew />} />
+              <Route path="/post/:id" element={<Postpage />} />
+              <Route path="/edit/:id" element={<Editpost />} />
+            </Route>
+          </Routes>
+
+          <Footer />
+        </Router>
+      </UserContextProvider>
     </div>
   );
 }

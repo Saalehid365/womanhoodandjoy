@@ -1,24 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import BlogPost from "../home/blogpost";
-import Blogheader from "./blogheader";
 
 const Blogpage = () => {
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:4000/post").then((response) => {
+      response.json().then((posts) => {
+        setPosts(posts);
+        console.log(posts);
+      });
+    });
+  }, []);
   return (
     <div>
-      <h2>Blog Page</h2>
-      <Blogheader />
-      <div className="flex justify-center">
+      <div className="bg-gray-700 h-60 flex justify-center items-center text-5xl text-white">
+        <h2>Blog Page</h2>
+      </div>
+
+      <div className="flex justify-center pt-24">
         <div className="flex flex-col items-center w-2/3 border-r-2">
-          <BlogPost />
-          <BlogPost />
-          <BlogPost />
-          <BlogPost />
-          <BlogPost />
-          <BlogPost />
-          <BlogPost />
-          <BlogPost />
-          <BlogPost />
-          <BlogPost />
+          {posts.length > 0 && posts.map((post) => <BlogPost {...post} />)}
         </div>
         <div className=" w-72  h-full flex flex-col items-start p-4 ">
           <h2>CATEGORIES</h2>
