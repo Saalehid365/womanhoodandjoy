@@ -23,7 +23,10 @@ const Postpage = () => {
       )}
       <h2>{postInfo.title}</h2>
       <div className="h-12 w-12">
-        <img src={`http://localhost:4000/${postInfo.cover}`}></img>
+        <img
+          alt="cover"
+          src={`https://womanhood.onrender.com/${postInfo.cover}`}
+        ></img>
       </div>
       <div dangerouslySetInnerHTML={{ __html: postInfo.content }} />
     </div>

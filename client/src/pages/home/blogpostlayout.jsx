@@ -4,6 +4,7 @@ const Blogpostlayout = () => {
   return (
     <div className="flex flex-col w-72  items-start justify-evenly h-full">
       <img
+        alt="imaged"
         src="https://cdn.shopify.com/s/files/1/0398/3153/5778/articles/557750845602_600x600_crop_center.png?v=1661958608"
         className="h-48 w-full rounded-lg pb-4"
       ></img>

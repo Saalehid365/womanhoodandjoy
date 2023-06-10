@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { formatISO9075 } from "date-fns";
 import { FaArrowRight, FaUser } from "react-icons/fa";
 
 const BlogPost = ({
@@ -17,7 +16,7 @@ const BlogPost = ({
     <div className="flex items-start w-2/3 pb-6 border border-b-2 pt-4 bg-gray-200 mb-4">
       <Link to={`/post/${_id}`}>
         <img
-          src={"http://localhost:4000/" + cover}
+          src={"https://womanhood.onrender.com/" + cover}
           className="h-60 w-full rounded-xl"
           alt="/"
         ></img>

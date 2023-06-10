@@ -4,7 +4,7 @@ import BlogPost from "../home/blogpost";
 const Blogpage = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4000/post").then((response) => {
+    fetch("https://womanhood.onrender.com/post").then((response) => {
       response.json().then((posts) => {
         setPosts(posts);
         console.log(posts);
