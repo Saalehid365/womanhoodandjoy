@@ -14,26 +14,27 @@ const BlogPost = ({
   author,
 }) => {
   return (
-    <div className="flex flex-col items-start w-2/3 pb-6 border border-b-2 pt-4 bg-gray-200 mb-4">
+    <div className="flex items-start w-2/3 pb-6 border border-b-2 pt-4 bg-gray-200 mb-4">
       <Link to={`/post/${_id}`}>
         <img
           src={"http://localhost:4000/" + cover}
-          className="h-96 w-full rounded-xl"
+          className="h-60 w-full rounded-xl"
           alt="/"
         ></img>
       </Link>
       <div>
-        <FaUser />
-        <h2></h2>
+        <div className="flex ">
+          <FaUser />
+        </div>
+        <div>{summary}</div>
+        <Link
+          to={`/post/${_id}`}
+          className="w-44 h-12 border flex justify-center items-center border-gray-800 rounded-full"
+        >
+          <h3>Read more</h3>
+          <FaArrowRight />
+        </Link>
       </div>
-
-      <Link
-        to={`/post/${_id}`}
-        className="w-44 h-12 border flex justify-center items-center border-gray-800 rounded-full"
-      >
-        <h3>Read more</h3>
-        <FaArrowRight />
-      </Link>
     </div>
   );
 };
