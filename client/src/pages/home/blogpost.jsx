@@ -24,7 +24,7 @@ const BlogPost = ({
       </Link>
       <div>
         <FaUser />
-        <h2>{author.username}</h2>
+        <h2></h2>
       </div>
 
       <Link
