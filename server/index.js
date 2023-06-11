@@ -18,7 +18,7 @@ const secret = "lukyfdjfghjkytyf";
 app.use(
   cors({
     credentials: true,
-    origin: "https://cool-bublanina-81592a.netlify.app/",
+    origin: "https://womanhood.onrender.com",
   })
 );
 app.use(express.json());
