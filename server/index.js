@@ -18,7 +18,7 @@ const secret = "lukyfdjfghjkytyf";
 app.use(
   cors({
     credentials: true,
-    origin: "https://womanhood.onrender.com",
+    origin: "http://localhost:3000",
   })
 );
 app.use(express.json());
