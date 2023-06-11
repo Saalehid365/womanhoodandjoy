@@ -15,12 +15,7 @@ const path = require("path");
 const salt = bcrypt.genSaltSync(10);
 const secret = "lukyfdjfghjkytyf";
 
-app.use(
-  cors({
-    credentials: true,
-    origin: "https://cool-bublanina-81592a.netlify.app/",
-  })
-);
+app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 app.use(express.json());
 app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
