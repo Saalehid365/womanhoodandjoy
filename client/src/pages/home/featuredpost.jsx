@@ -1,17 +1,25 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Featuredpost = () => {
+const FeaturedPost = ({
+  _id,
+  title,
+  summary,
+  cover,
+  content,
+  catergory,
+  createdAt,
+  author,
+}) => {
   return (
-    <div className="flex pb-4">
-      <div className="bg-gray-100 h-24 w-36"></div>
-      <div className="flex flex-col items-start pl-4">
-        <h3 className="text-gray-800 text-start">
-          How to start the gaps Diet with differnt stages children
-        </h3>
-        <h4 className="text-gray-300 text-xs">JUN 11, 2023</h4>
-      </div>
+    <div className="bg-gray-300 w-96 h-96 flex flex-col items-center justify-center rounded-md">
+      <h3 className="pb-6">{catergory}</h3>
+      <h2>{title}</h2>
+      <Link className="w-32 bg-gray-400 mt-6 rounded-2xl h-8 flex items-center justify-center text-gray-100">
+        Read more
+      </Link>
     </div>
   );
 };
 
-export default Featuredpost;
+export default FeaturedPost;

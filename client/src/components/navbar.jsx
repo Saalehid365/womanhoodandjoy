@@ -1,15 +1,21 @@
 import React, { useContext, useEffect } from "react";
-import Socialmedia from "./socialmedia";
 import Links from "./links";
 import Login from "./login";
-import Logo from "./logo";
 import { Link } from "react-router-dom";
 import { UserContext } from "../user";
+import {
+  FaAddressCard,
+  FaFacebook,
+  FaInstagram,
+  FaPencilAlt,
+  FaTwitter,
+  FaUser,
+} from "react-icons/fa";
 
 const Navbar = () => {
   const { setUserInfo, userInfo } = useContext(UserContext);
   useEffect(() => {
-    fetch("https://womanhood.onrender.com/profile", {
+    fetch("http://localhost:4000/profile", {
       credentials: "include",
     }).then((response) => {
       response.json().then((userInfo) => {
@@ -18,7 +24,7 @@ const Navbar = () => {
     });
   }, []);
   const logout = () => {
-    fetch("https://womanhood.onrender.com/logout", {
+    fetch("http://localhost:4000/logout", {
       credentials: "include",
       method: "POST",
     });
@@ -26,22 +32,43 @@ const Navbar = () => {
   };
 
   const username = userInfo?.username;
+
   return (
-    <div className="flex justify-between h-24">
-      <Logo />
-      <Links />
-      <div className=" flex items-center justify-evenly px-4">
-        <Socialmedia />
-        {username && (
-          <div className=" w-72 flex justify-between">
-            <Link to="/createnew">Create new post</Link>
-            <Link to="registerpage">Register</Link>
-            <a href="/" onClick={logout}>
-              Logout
-            </a>
-          </div>
-        )}
-        {!username && <Login />}
+    <div className="pt-4 pb-6 px-4">
+      <div className="flex justify-between w-full text-1xl items-center">
+        <Link className="bg-pink-200 w-32 h-8 flex items-center justify-center rounded-full text-sm">
+          Subscribe
+        </Link>
+        <div className="w-96 flex justify-evenly text-1xl items-center">
+          <FaFacebook />
+          <FaInstagram />
+          <FaTwitter />
+          {!username && (
+            <Link to="loginpage">
+              <FaUser />
+            </Link>
+          )}
+          {username && (
+            <div className="flex justify-between w-40">
+              <Link to="/createnew">
+                <FaPencilAlt />
+              </Link>
+              <Link to="registerpage">
+                <FaAddressCard />
+              </Link>
+              <a href="/" onClick={logout}>
+                Logout
+              </a>
+            </div>
+          )}
+        </div>
+      </div>
+
+      <div className="h-44 flex flex-col justify-center items-center ">
+        <h2 className="text-7xl font-display">Woman hood & Joy</h2>
+      </div>
+      <div className="flex justify-center h-12 border-t-2 border-gray-100">
+        <Links />
       </div>
     </div>
   );

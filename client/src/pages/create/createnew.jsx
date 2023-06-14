@@ -34,6 +34,8 @@ const Createnew = () => {
   const [title, setTitle] = useState("");
   const [summary, setSummary] = useState("");
   const [content, setContent] = useState("");
+  const [catergory, setCatergory] = useState("");
+  const [featured, setFeatured] = useState("");
   const [files, setFiles] = useState("");
   const [redirect, setRedirect] = useState(false);
   const createNewPost = async (e) => {
@@ -41,10 +43,12 @@ const Createnew = () => {
     data.set("title", title);
     data.set("summary", summary);
     data.set("content", content);
+    data.set("catergory", catergory);
+    data.set("featured", featured);
     data.set("file", files[0]);
     e.preventDefault();
 
-    const response = await fetch("https://womanhood.onrender.com/post", {
+    const response = await fetch("http://localhost:4000/post", {
       method: "POST",
       body: data,
       credentials: "include",
@@ -74,9 +78,23 @@ const Createnew = () => {
         <input
           className="border pl-2 h-12"
           placeholder="summary"
-          type="Summary"
+          type="summary"
           value={summary}
           onChange={(e) => setSummary(e.target.value)}
+        ></input>
+        <input
+          className="border pl-2 h-12"
+          placeholder="catergory"
+          type="category"
+          value={catergory}
+          onChange={(e) => setCatergory(e.target.value)}
+        ></input>
+        <input
+          className="border pl-2 h-12"
+          placeholder="featured"
+          type="featured"
+          value={featured}
+          onChange={(e) => setFeatured(e.target.value)}
         ></input>
         <input type="file" onChange={(e) => setFiles(e.target.files)}></input>
         <ReactQuill

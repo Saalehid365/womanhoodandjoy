@@ -7,7 +7,7 @@ const Registerpage = () => {
   const register = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("https://womanhood.onrender.com/register", {
+    const response = await fetch("http://localhost:4000/register", {
       method: "POST",
       body: JSON.stringify({ username, password }),
       headers: { "Content-Type": "application/json" },

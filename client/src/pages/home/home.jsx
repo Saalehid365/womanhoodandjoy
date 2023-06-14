@@ -1,16 +1,16 @@
 import React from "react";
-import Banner from "./banner";
 import Hero from "./hero";
-import Latestpost from "./latestpost";
-import Newestfrom from "./newestfrom";
+import Cats from "./cats";
+import PostHome from "./postHome";
+import ImageBanner from "./imageBanner";
 
 const Home = () => {
   return (
     <div>
-      <Banner />
       <Hero />
-      <Latestpost />
-      <Newestfrom />
+      <Cats />
+      <PostHome />
+      <ImageBanner />
     </div>
   );
 };

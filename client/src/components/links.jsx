@@ -3,16 +3,18 @@ import { Link } from "react-router-dom";
 
 const Links = () => {
   return (
-    <div className=" w-2/4 flex justify-center items-center">
-      <Link to="/" className="border-l-2 w-32 text-center">
+    <div className=" w-full flex justify-center items-center text-gray-500 font-mono">
+      <Link to="/" className=" w-36 text-center">
         Home
       </Link>
-      <Link to="blogpage" className="border-l-2  w-32">
+      <Link to="blogpage" className="  w-32">
         Blogs
       </Link>
-      <Link className="border-l-2  w-32">Author</Link>
-      <Link className="border-l-2  w-32">Shop</Link>
-      <Link className="border-l-2 border-r-2 w-32">Contact</Link>
+      <Link className="  w-36">Author</Link>
+      <Link className="  w-36">Shop</Link>
+      <Link to="contactpage" className="  w-36">
+        Contact
+      </Link>
     </div>
   );
 };

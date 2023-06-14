@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { FaArrowRight, FaUser } from "react-icons/fa";
+import Socials from "./socials";
+import { FaMinus, FaSpinner } from "react-icons/fa";
 
 const BlogPost = ({
   _id,
@@ -9,30 +10,32 @@ const BlogPost = ({
   summary,
   cover,
   content,
+  catergory,
   createdAt,
+
   author,
 }) => {
   return (
-    <div className="flex items-start w-2/3 pb-6 border border-b-2 pt-4 bg-gray-200 mb-4">
-      <Link to={`/post/${_id}`}>
+    <div className=" w-72 flex flex-col items-center pb-6  pt-4  mb-4">
+      <Link to={`/post/${_id}`} className="bg-gray-200 w-full">
         <img
-          src={"https://womanhood.onrender.com/" + cover}
+          src={"http://localhost:4000/" + cover}
           className="h-60 w-full rounded-xl"
           alt="/"
         ></img>
       </Link>
-      <div>
-        <div className="flex ">
-          <FaUser />
-        </div>
-        <div>{summary}</div>
-        <Link
-          to={`/post/${_id}`}
-          className="w-44 h-12 border flex justify-center items-center border-gray-800 rounded-full"
-        >
-          <h3>Read more</h3>
-          <FaArrowRight />
-        </Link>
+      <div className="flex h-6 pt-4 items-center w-32 justify-evenly">
+        <FaSpinner className="text-xs text-gray-300" />
+        <h4 className=" text-gray-300">{catergory}</h4>
+        <FaSpinner className="text-xs text-gray-300" />
+      </div>
+      <h3 className="pt-4 font-bold text-sm pb-6 text-gray-700">{title}</h3>
+      <div className="text-sm text-gray-400">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non saepe
+        aspernatur iste tenetur itaque est explicabo eveniet magni dolorem? Non
+      </div>
+      <div className="flex justify-center w-full pt-4 text-gray-400">
+        <Socials />
       </div>
     </div>
   );
