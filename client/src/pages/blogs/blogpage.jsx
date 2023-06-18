@@ -16,18 +16,13 @@ const Blogpage = () => {
     });
   }, []);
   return (
-    <div>
-      <div className="bg-gray-500 h-72 flex justify-center items-center text-5xl text-white">
-        <h2>Blog Page</h2>
-      </div>
-
+    <div className="border-t-2">
       <div className="flex justify-center pt-24 w-full items-start h-full">
         <div className="grid grid-cols-3  w-2/3">
           {posts.length > 0 && posts.map((post) => <BlogPost {...post} />)}
         </div>
         <div className=" flex flex-col items-start p-4 ">
           <Abouticon />
-          <Slideshow />
           <Subscribeicon />
           <Instagrampost />
         </div>

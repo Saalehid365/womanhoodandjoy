@@ -6,7 +6,7 @@ import ImageBanner from "./imageBanner";
 
 const Home = () => {
   return (
-    <div>
+    <div className="border-t-2">
       <Hero />
       <Cats />
       <PostHome />

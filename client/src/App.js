@@ -11,6 +11,10 @@ import Createnew from "./pages/create/createnew";
 import Postpage from "./pages/blogs/postpage";
 import Editpost from "./pages/blogs/editpost";
 import Contactpage from "./pages/contact/contactpage";
+import Lifestyle from "./pages/blogs/lifestyle";
+import Travel from "./pages/blogs/travel";
+import Beauty from "./pages/blogs/beauty";
+import Food from "./pages/blogs/food";
 
 function App() {
   return (
@@ -26,9 +30,12 @@ function App() {
               <Route path="blogpage" element={<Blogpage />} />
               <Route path="createnew" element={<Createnew />} />
               <Route path="/post/:id" element={<Postpage />} />
-              <Route path="/post/:featured" element={<Postpage />} />
               <Route path="/edit/:id" element={<Editpost />} />
               <Route path="contactpage" element={<Contactpage />} />
+              <Route path="/filteredlifestylepage" element={<Lifestyle />} />
+              <Route path="/filteredtravelpage" element={<Travel />} />
+              <Route path="/filteredlbeautypage" element={<Beauty />} />
+              <Route path="/filteredfoodpage" element={<Food />} />
             </Route>
           </Routes>
 

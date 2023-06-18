@@ -1,8 +1,10 @@
 import React, { useContext, useEffect } from "react";
 import Links from "./links";
-import Login from "./login";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
 import { UserContext } from "../user";
+
 import {
   FaAddressCard,
   FaFacebook,
@@ -34,12 +36,17 @@ const Navbar = () => {
   const username = userInfo?.username;
 
   return (
-    <div className="pt-4 pb-6 px-4">
+    <div className="pt-4  px-4">
       <div className="flex justify-between w-full text-1xl items-center">
         <Link className="bg-pink-200 w-32 h-8 flex items-center justify-center rounded-full text-sm">
           Subscribe
         </Link>
-        <div className="w-96 flex justify-evenly text-1xl items-center">
+        <motion.div
+          initial={{ x: 400 }}
+          animate={{ x: 0 }}
+          transition={{ delay: 0.3 }}
+          className="w-96 flex justify-evenly text-1xl items-center"
+        >
           <FaFacebook />
           <FaInstagram />
           <FaTwitter />
@@ -61,13 +68,12 @@ const Navbar = () => {
               </a>
             </div>
           )}
-        </div>
+        </motion.div>
       </div>
-
       <div className="h-44 flex flex-col justify-center items-center ">
         <h2 className="text-7xl font-display">Woman hood & Joy</h2>
       </div>
-      <div className="flex justify-center h-12 border-t-2 border-gray-100">
+      <div className="flex justify-center h-16 border-t-2 border-gray-100">
         <Links />
       </div>
     </div>

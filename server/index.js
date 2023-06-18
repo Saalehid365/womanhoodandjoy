@@ -101,7 +101,30 @@ app.get("/post", async (req, res) => {
     await Post.find()
       .populate("author", ["username"])
       .sort({ createdAt: -1 })
+      .limit(6)
+  );
+});
+
+app.get("/lifestyle", async (req, res) => {
+  res.json(
+    await Post.find({ catergory: "lifestyle" })
+      .sort({ createdAt: -1 })
       .limit(10)
+  );
+});
+app.get("/food", async (req, res) => {
+  res.json(
+    await Post.find({ catergory: "food" }).sort({ createdAt: -1 }).limit(10)
+  );
+});
+app.get("/beauty", async (req, res) => {
+  res.json(
+    await Post.find({ catergory: "beauty" }).sort({ createdAt: -1 }).limit(10)
+  );
+});
+app.get("/travel", async (req, res) => {
+  res.json(
+    await Post.find({ catergory: "travel" }).sort({ createdAt: -1 }).limit(10)
   );
 });
 
@@ -110,16 +133,7 @@ app.get("/posthome", async (req, res) => {
     await Post.find()
       .populate("author", ["username"])
       .sort({ createdAt: -1 })
-      .limit(10)
-  );
-});
-
-app.get("/featured", async (req, res) => {
-  res.json(
-    await Post.find({ featured: "yes" })
-      .populate("author", ["username"])
-      .sort({ createdAt: -1 })
-      .limit(3)
+      .limit(9)
   );
 });
 

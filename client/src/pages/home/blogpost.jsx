@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 import Socials from "./socials";
-import { FaMinus, FaSpinner } from "react-icons/fa";
+import { FaSpinner } from "react-icons/fa";
 
 const BlogPost = ({
   _id,
@@ -16,11 +17,16 @@ const BlogPost = ({
   author,
 }) => {
   return (
-    <div className=" w-72 flex flex-col items-center pb-6  pt-4  mb-4">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ delay: 0.1 }}
+      className="h-2/3 w-72 flex flex-col items-center pb-6  pt-4  mb-4 "
+    >
       <Link to={`/post/${_id}`} className="bg-gray-200 w-full">
         <img
           src={"http://localhost:4000/" + cover}
-          className="h-60 w-full rounded-xl"
+          className="h-60 w-full "
           alt="/"
         ></img>
       </Link>
@@ -29,15 +35,14 @@ const BlogPost = ({
         <h4 className=" text-gray-300">{catergory}</h4>
         <FaSpinner className="text-xs text-gray-300" />
       </div>
-      <h3 className="pt-4 font-bold text-sm pb-6 text-gray-700">{title}</h3>
-      <div className="text-sm text-gray-400">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non saepe
-        aspernatur iste tenetur itaque est explicabo eveniet magni dolorem? Non
-      </div>
+      <Link to={`/post/${_id}`}>
+        <h3 className="pt-4 font-bold text-sm pb-6 text-gray-700">{title}</h3>
+        <div className="text-sm text-gray-400">{summary}</div>
+      </Link>
       <div className="flex justify-center w-full pt-4 text-gray-400">
         <Socials />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

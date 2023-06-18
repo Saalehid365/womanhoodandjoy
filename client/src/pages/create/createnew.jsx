@@ -56,56 +56,65 @@ const Createnew = () => {
     if (response.ok) {
       setRedirect(true);
     }
-    if (redirect) {
-      return <Navigate to={"/"} />;
-    }
+
     console.log(redirect);
   };
+
+  if (redirect) {
+    return <Navigate to={"/"} />;
+  }
   return (
     <div className="w-full h-screen flex flex-col items-center justify-center pt-12">
       <h2 className="text-2xl font-bold">Create new post</h2>
       <form
         onSubmit={createNewPost}
-        className="w-2/3 h-full flex flex-col justify-evenly "
+        className="w-2/3 h-full flex flex-col justify-evenly pb-12"
       >
         <input
-          className="border pl-2 h-12"
-          placeholder="title"
+          className="border pl-2  h-16 mt-4"
+          placeholder="Title"
           type="title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         ></input>
         <input
-          className="border pl-2 h-12"
-          placeholder="summary"
+          className="border pl-2  h-16 mt-4"
+          placeholder="Summary"
           type="summary"
           value={summary}
           onChange={(e) => setSummary(e.target.value)}
         ></input>
         <input
-          className="border pl-2 h-12"
-          placeholder="catergory"
+          className="border pl-2 h-16 mt-4"
+          placeholder="Catergory"
           type="category"
           value={catergory}
           onChange={(e) => setCatergory(e.target.value)}
         ></input>
         <input
-          className="border pl-2 h-12"
-          placeholder="featured"
+          className="border pl-2 h-16 mt-4"
+          placeholder="Featured"
           type="featured"
           value={featured}
           onChange={(e) => setFeatured(e.target.value)}
         ></input>
-        <input type="file" onChange={(e) => setFiles(e.target.files)}></input>
+        <input
+          className="mt-4 pb-4"
+          type="file"
+          onChange={(e) => setFiles(e.target.files)}
+        ></input>
         <ReactQuill
-          className=" h-2/3 text-start border-none mb-12 "
+          className=" h-2/3 text-start border-none mb-12 mt-4"
           modules={modules}
           formats={formats}
           value={content}
           onChange={(newValue) => setContent(newValue)}
         />
-        <div className="flex justify-center">
-          <button className="w-36 rounded-sm bg-blue-300"> Create Post</button>
+        <div className="flex justify-center pt-12">
+          <button className="w-36 rounded-sm bg-blue-300 h-12">
+            {" "}
+            Create Post
+          </button>
         </div>
       </form>
     </div>

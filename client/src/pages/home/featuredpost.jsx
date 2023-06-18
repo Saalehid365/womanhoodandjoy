@@ -14,8 +14,16 @@ const FeaturedPost = ({
   return (
     <div className="bg-gray-300 w-96 h-96 flex flex-col items-center justify-center rounded-md">
       <h3 className="pb-6">{catergory}</h3>
-      <h2>{title}</h2>
-      <Link className="w-32 bg-gray-400 mt-6 rounded-2xl h-8 flex items-center justify-center text-gray-100">
+      <h2
+        className="w-2/3
+      "
+      >
+        {title}
+      </h2>
+      <Link
+        to={`/post/${_id}`}
+        className="w-32 bg-gray-400 mt-6 rounded-2xl h-8 flex items-center justify-center text-gray-100"
+      >
         Read more
       </Link>
     </div>
