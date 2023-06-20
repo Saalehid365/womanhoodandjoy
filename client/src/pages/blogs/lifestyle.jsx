@@ -8,7 +8,7 @@ import BlogPost from "../home/blogpost";
 const Filteredpage = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4000/lifestyle").then((response) => {
+    fetch("https://womanhood.onrender.com/lifestyle").then((response) => {
       response.json().then((posts) => {
         setPosts(posts);
         console.log(posts);

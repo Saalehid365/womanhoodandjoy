@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const PostHome = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4000/posthome").then((response) => {
+    fetch("https://womanhood.onrender.com/posthome").then((response) => {
       response.json().then((posts) => {
         setPosts(posts);
         console.log(posts);

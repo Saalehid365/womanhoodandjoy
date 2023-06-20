@@ -25,7 +25,7 @@ const BlogPost = ({
     >
       <Link to={`/post/${_id}`} className="bg-gray-200 w-full">
         <img
-          src={"http://localhost:4000/" + cover}
+          src={"https://womanhood.onrender.com/" + cover}
           className="h-60 w-full "
           alt="/"
         ></img>

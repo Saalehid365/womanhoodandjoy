@@ -8,7 +8,7 @@ import Instagrampost from "./instagrampost";
 const Travel = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4000/travel").then((response) => {
+    fetch("https://womanhood.onrender.com/travel").then((response) => {
       response.json().then((posts) => {
         setPosts(posts);
         console.log(posts);

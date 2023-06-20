@@ -12,7 +12,7 @@ const Postpage = () => {
   const { userInfo } = useContext(UserContext);
   const { id } = useParams();
   useEffect(() => {
-    fetch(`http://localhost:4000/post/${id}`).then((response) => {
+    fetch(`hhttps://womanhood.onrender.com/post/${id}`).then((response) => {
       response.json().then((postInfo) => {
         setPostInfo(postInfo);
       });
@@ -38,7 +38,7 @@ const Postpage = () => {
           <img
             className="h-full w-2/3 "
             alt="cover"
-            src={`http://localhost:4000/${postInfo.cover}`}
+            src={`https://womanhood.onrender.com/${postInfo.cover}`}
           ></img>
         </div>
         <h2 className=" pt-4 text-gray-400  w-36 h-10 flex items-center justify-center">
