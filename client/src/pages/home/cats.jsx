@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const Cats = () => {
   return (
-    <div className="flex justify-center pt-12">
+    <div className="flex justify-center pt-12 sm:hidden">
       <div className="flex justify-evenly w-7/12">
         <Link
           to="filteredlifestylepage"

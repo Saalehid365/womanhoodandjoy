@@ -13,7 +13,7 @@ const Links = () => {
   };
 
   return (
-    <div className=" w-full flex justify-center items-center text-gray-500 font-thin">
+    <div className=" w-full flex justify-center items-center text-gray-900 font-medium sm:hidden">
       <Link to="/" className=" w-36 text-center">
         Home
       </Link>

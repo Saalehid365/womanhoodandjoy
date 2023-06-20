@@ -36,9 +36,9 @@ const Navbar = () => {
   const username = userInfo?.username;
 
   return (
-    <div className="pt-4  px-4">
+    <div className="pt-4  px-4 ">
       <div className="flex justify-between w-full text-1xl items-center">
-        <Link className="bg-pink-200 w-32 h-8 flex items-center justify-center rounded-full text-sm">
+        <Link className="bg-pink-200 w-32 h-8 flex items-center justify-center rounded-full ">
           Subscribe
         </Link>
         <motion.div
@@ -47,9 +47,30 @@ const Navbar = () => {
           transition={{ delay: 0.3 }}
           className="w-96 flex justify-evenly text-1xl items-center"
         >
-          <FaFacebook />
-          <FaInstagram />
-          <FaTwitter />
+          <a
+            rel="noreffer"
+            target="_blank"
+            href="www.facebook.com/womanhoodandjoy"
+            className="hover:text-gray-500"
+          >
+            <FaFacebook />
+          </a>
+          <a
+            rel="noreffer"
+            target="_blank"
+            href="www.instagram.com/womanhoodandjoy"
+            className="hover:text-gray-500"
+          >
+            <FaInstagram />
+          </a>
+          <a
+            rel="noreffer"
+            target="_blank"
+            href="www.twitter.com/womanhoodandjoy"
+            className="hover:text-gray-500"
+          >
+            <FaTwitter />
+          </a>
           {!username && (
             <Link to="loginpage">
               <FaUser />
@@ -73,7 +94,7 @@ const Navbar = () => {
       <div className="h-44 flex flex-col justify-center items-center ">
         <h2 className="text-7xl font-display">Woman hood & Joy</h2>
       </div>
-      <div className="flex justify-center h-16 border-t-2 border-gray-100">
+      <div className="flex justify-center h-16 border-t-2 border-gray-100 sm:hidden">
         <Links />
       </div>
     </div>
