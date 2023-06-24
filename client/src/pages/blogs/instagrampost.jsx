@@ -16,12 +16,12 @@ const Instagrampost = () => {
           rel="noreferrer"
           className="grid grid-cols-2 grid-rows-2 gap-2"
         >
-          <div className=" bg-seaweed bg-cover h-28 w-28"></div>
-          <div className=" bg-salt bg-cover h-28 w-28"></div>
-          <div className=" bg-beach bg-cover h-28 w-28"></div>
-          <div className=" bg-sun bg-cover h-28 w-28"></div>
+          <div className=" bg-seaweed bg-cover h-28 w-28 sm:w-36 sm:h-36"></div>
+          <div className=" bg-salt bg-cover h-28 w-28 sm:w-36 sm:h-36"></div>
+          <div className=" bg-beach bg-cover h-28 w-28 sm:w-36 sm:h-36"></div>
+          <div className=" bg-sun bg-cover h-28 w-28 sm:w-36 sm:h-36"></div>
         </a>
-        <FaInstagram className="text-1xl text-gray-500" />
+        <FaInstagram className="text-1xl text-gray-500 " />
       </div>
     </div>
   );

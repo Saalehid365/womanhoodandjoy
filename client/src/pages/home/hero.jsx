@@ -16,7 +16,7 @@ const Hero = () => {
         initial={{ y: 400, opacity: 0 }}
         animate={{ y: 100, scale: 1, opacity: 1 }}
         transition={{ delay: 0.6, type: "spring", stiffness: 100 }}
-        className="border-b-8 h-4 border-white w-2/4"
+        className="border-b-8 h-4 border-white w-2/4 sm:border-b-2"
       ></motion.div>
     </div>
   );

@@ -4,7 +4,7 @@ import { FaEllipsisH } from "react-icons/fa";
 
 const Abouticon = () => {
   return (
-    <div className=" flex flex-col items-center justify-between h-96 w-60">
+    <div className=" flex flex-col items-center justify-between h-96 w-60 sm:hidden">
       <div className="flex w-32 items-center justify-evenly">
         <FaEllipsisH className="text-gray-300" />
         <h2 className="font-thin text-gray-600">About me</h2>

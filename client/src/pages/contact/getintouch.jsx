@@ -3,7 +3,7 @@ import Form from "./form";
 
 const Getintouch = () => {
   return (
-    <div className="w-3/4 h-96 flex flex-col items-start ">
+    <div className="w-3/4 h-96 flex flex-col items-start sm:w-full sm:px-4 sm:h-full">
       <h2 className="font-bold">Get in touch with me</h2>
       <h3 className="text-start pt-4 text-gray-700">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam velit

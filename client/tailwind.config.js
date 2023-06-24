@@ -25,7 +25,8 @@ module.exports = {
     },
     fontFamily: {
       display: ["Satisfy", "cursive"],
+      Indie: ["Indie Flower", "cursive"],
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };
