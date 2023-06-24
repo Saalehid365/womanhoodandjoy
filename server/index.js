@@ -18,7 +18,7 @@ const secret = "lukyfdjfghjkytyf";
 app.use(
   cors({
     credentials: true,
-    origin: "http://womanhoodandjoy.com",
+    origin: "https://womanhoodandjoy.com",
   })
 );
 app.use(express.json());
