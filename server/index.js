@@ -129,6 +129,7 @@ app.get("/travel", async (req, res) => {
 });
 
 app.get("/posthome", async (req, res) => {
+  response.header("Access-Control-Allow-Origin", "localhost:3000");
   res.json(
     await Post.find()
       .populate("author", ["username"])
