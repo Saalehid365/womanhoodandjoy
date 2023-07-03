@@ -20,7 +20,7 @@ const Blogpage = () => {
         <div className="flex justify-center w-full sm:pb-12">
           <h2 className="text-3xl">Blog page</h2>
         </div>
-        <div className="flex">
+        <div className="flex justify-evenly w-full">
           <div className="grid grid-cols-3  w-2/3 sm:grid-cols-1 sm:w-full sm:place-items-center sm:gap-4">
             {posts.length > 0 && posts.map((post) => <BlogPost {...post} />)}
           </div>
