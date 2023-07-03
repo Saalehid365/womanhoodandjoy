@@ -6,8 +6,10 @@ import ImageBanner from "./imageBanner";
 
 const Home = () => {
   return (
-    <div className="border-t-2">
-      <Hero />
+    <div className=" flex flex-col justify-center w-full ">
+      <div className="w-full justify-center items-center px-44">
+        <Hero />
+      </div>
       <Cats />
       <PostHome />
       <ImageBanner />

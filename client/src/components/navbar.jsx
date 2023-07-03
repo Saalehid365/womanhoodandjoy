@@ -101,7 +101,9 @@ const Navbar = () => {
           )}
         </motion.div>
       </div>
-
+      <div className="h-40 flex justify-center items-center">
+        <p className="text-5xl font-Indie">Womanhood and Joy</p>
+      </div>
       <div className="flex justify-center h-16 border-t-2 border-gray-100 sm:hidden">
         <Links />
       </div>
@@ -145,7 +147,7 @@ const Navbar = () => {
                 to=""
                 className="text-start border-b-2 border-dotted h-8 flex items-center"
               >
-                Shop
+                Health Shop
               </Link>
               <Link className="text-start border-b-2 border-dotted h-8 flex items-center">
                 About us

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <div className="flex flex-col justify-center pb-40 bg-sun bg-no-repeat bg-cover bg-center h-[70vh] items-center ">
+    <div className="flex flex-col justify-center pb-40 bg-sun bg-no-repeat bg-cover bg-center h-[50vh] items-center ">
       <motion.h2
         initial={{ y: 400, opacity: 0 }}
         animate={{ y: 100, scale: 1, opacity: 1 }}
