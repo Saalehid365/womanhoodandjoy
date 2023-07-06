@@ -18,7 +18,8 @@ const secret = "lukyfdjfghjkytyf";
 app.use(
   cors({
     credentials: true,
-    origin: "https://womanhoodandjoy.com",
+    origin: "http://localhost:3000",
+    /* origin: "https://womanhoodandjoy.com",*/
   })
 );
 app.use(express.json());
@@ -129,7 +130,6 @@ app.get("/travel", async (req, res) => {
 });
 
 app.get("/posthome", async (req, res) => {
-  response.header("Access-Control-Allow-Origin", "localhost:3000");
   res.json(
     await Post.find()
       .populate("author", ["username"])

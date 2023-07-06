@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const PostHome = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    fetch("https://womanhood.onrender.com/posthome").then((response) => {
+    fetch("http://localhost:4000/posthome").then((response) => {
       response.json().then((posts) => {
         setPosts(posts);
         console.log(posts);
@@ -14,7 +14,7 @@ const PostHome = () => {
   }, []);
   return (
     <div className="flex flex-col items-center justify-center pt-24 sm:pb-12 sm:pt-4 ">
-      <h2 className="hidden sm:inline">Post</h2>
+      <h2 className="font-display text-5xl sm:inline ">The Latest</h2>
       <div className="w-9/12 grid grid-cols-3 place-items-center pb-24 sm:grid-cols-1 gap-4 sm:pb-6">
         {posts.length > 0 &&
           posts.map((post) => <BlogPost {...post} key={post._id} />)}

@@ -8,7 +8,7 @@ import BlogPost from "../home/blogpost";
 const Food = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    fetch("https://womanhood.onrender.com/food").then((response) => {
+    fetch("https://localhost:4000/food").then((response) => {
       response.json().then((posts) => {
         setPosts(posts);
         console.log(posts);

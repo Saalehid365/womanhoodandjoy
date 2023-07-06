@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Abouticon from "../contact/abouticon";
-import Slideshow from "./slideshow";
 import Subscribeicon from "./subscribeicon";
 import Instagrampost from "./instagrampost";
 import BlogPost from "../home/blogpost";

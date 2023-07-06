@@ -48,7 +48,7 @@ const Createnew = () => {
     data.set("file", files[0]);
     e.preventDefault();
 
-    const response = await fetch("https://womanhood.onrender.com/post", {
+    const response = await fetch("http://localhost:4000/post", {
       method: "POST",
       body: data,
       credentials: "include",

@@ -10,7 +10,7 @@ import {
 
 const Footer = () => {
   return (
-    <div className="flex justify-evenly items-center w-full px-61 bg-gray-100 h-60 pt-6 text-gray-400 sm:flex-col sm:pb-4 sm:h-full">
+    <div className="flex justify-evenly items-center w-full px-61 bg-gray-100 h-60 pt-6 text-gray-400 sm:flex-col sm:pb-4 sm:h-full border border-t-2 border-gray-300">
       <div className="sm:hidden">
         <h2 className="sm:text-2xl">Woman hood & Joy</h2>
       </div>

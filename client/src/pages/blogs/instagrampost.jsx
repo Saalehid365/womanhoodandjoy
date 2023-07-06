@@ -1,5 +1,5 @@
 import React from "react";
-import { FaEllipsisH, FaInstagram, FaInstagramSquare } from "react-icons/fa";
+import { FaEllipsisH, FaInstagram } from "react-icons/fa";
 
 const Instagrampost = () => {
   return (

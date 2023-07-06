@@ -2,8 +2,9 @@ import React, { useContext, useEffect, useState } from "react";
 import Links from "./links";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-
 import { UserContext } from "../user";
+
+import logo from "../assets/logo.png";
 
 import {
   FaAddressCard,
@@ -18,7 +19,7 @@ import {
 const Navbar = () => {
   const { setUserInfo, userInfo } = useContext(UserContext);
   useEffect(() => {
-    fetch("https://womanhood.onrender.com/profile", {
+    fetch("http://localhost:4000/profile", {
       credentials: "include",
     }).then((response) => {
       response.json().then((userInfo) => {
@@ -27,7 +28,7 @@ const Navbar = () => {
     });
   }, []);
   const logout = () => {
-    fetch("https://womanhood.onrender.com/logout", {
+    fetch("http://localhost:4000/logout", {
       credentials: "include",
       method: "POST",
     });
@@ -46,16 +47,16 @@ const Navbar = () => {
   console.log(search);
 
   return (
-    <div className="pt-4 px-4 sm:p-0">
-      <div className="flex justify-between w-full text-1xl items-center sm:hidden">
-        <Link className="bg-pink-200 w-32 h-8 flex items-center justify-center rounded-full ">
-          Subscribe
-        </Link>
+    <div className="pt-4 px-4 sm:p-0 bg-gray-100">
+      <div className="flex justify-between w-full text-1xl items-start sm:hidden">
+        <div>
+          <img src={logo} className="h-32 w-32"></img>
+        </div>
         <motion.div
           initial={{ x: 400 }}
           animate={{ x: 0 }}
           transition={{ delay: 0.3 }}
-          className="w-96 flex justify-evenly text-1xl items-center"
+          className="w-96 flex justify-evenly text-1xl items-center pt-12"
         >
           <a
             rel="noreffer"
@@ -101,10 +102,10 @@ const Navbar = () => {
           )}
         </motion.div>
       </div>
-      <div className="h-40 flex justify-center items-center">
+      <div className="h-20 flex justify-center items-start sm:hidden ">
         <p className="text-5xl font-Indie">Womanhood and Joy</p>
       </div>
-      <div className="flex justify-center h-16 border-t-2 border-gray-100 sm:hidden">
+      <div className="flex justify-center h-16  sm:hidden border-t-2 border-gray-300">
         <Links />
       </div>
       <div className="hidden sm:flex navbar bg-base-100 ">
@@ -165,7 +166,7 @@ const Navbar = () => {
             </ul>
           </div>
         </div>
-        <div className="navbar-center flex flex-col">
+        <div className="navbar-center flex flex-col ">
           <a className="btn btn-ghost normal-case text-xs sm:p-0 font-Indie sm:text-xl">
             Womanhood and joy
           </a>
